@@ -22,7 +22,8 @@
                        Margin="6"
                        Height="36"
                        VerticalAlignment="Center"></Image>
-                <TextBlock Text="豆瓣FM"
+                <TextBlock x:Name="SongName"
+                           Text="豆瓣FM"
                            Foreground="Black"
                            VerticalAlignment="Center"
                            FontSize="20"></TextBlock>
@@ -65,7 +66,8 @@
                     <Image Source="Assets/Images/ic_player_ban.png"
                            Width="60"></Image>
                 </Button>
-                <Button Style="{StaticResource DefaultImageButtonRectStyle}"
+                <Button x:Name="Paly"
+                        Style="{StaticResource DefaultImageButtonRectStyle}"
                         BorderBrush="Transparent"
                         Margin="-12">
                     <Image Source="Assets/Images/play.png"
