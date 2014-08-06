@@ -6,9 +6,84 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    FontSize="20">
 
     <Grid>
-
-    </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              Background="{StaticResource TitleBarSolidColorBrush}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Assets/Images/title_icon.png"
+                       Margin="6"
+                       Height="36"
+                       VerticalAlignment="Center"></Image>
+                <TextBlock Text="豆瓣FM"
+                           Foreground="Black"
+                           VerticalAlignment="Center"
+                           FontSize="20"></TextBlock>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" 
+              Background="{StaticResource PlayerBackgroundSolidColorBrush}">
+            <Pivot>
+                <PivotItem Padding="0"
+                           Margin="0 -12 0 0">
+                    <Image Source="Assets/Images/bg_player_cover_loading.png"></Image>
+                </PivotItem>
+                <PivotItem Padding="0"
+                           Margin="0 -12 0 0">
+                    <TextBlock Text="2"
+                               Margin="24"
+                               Foreground="White"></TextBlock>
+                </PivotItem>
+                <PivotItem Padding="0"
+                           Margin="0 -12 0 0">
+                    <TextBlock Text="3"
+                               Margin="24"
+                               Foreground="White"></TextBlock>
+                </PivotItem>
+            </Pivot>
+        </Grid>
+        <Grid Grid.Row="2" 
+              Background="{StaticResource TitleBarSolidColorBrush}">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Button Style="{StaticResource DefaultImageButtonRectStyle}"
+                        BorderBrush="Transparent"
+                        Margin="-12">
+                    <Image Source="Assets/Images/ic_player_fav.png"
+                           Width="60"></Image>
+                </Button>
+                <Button Style="{StaticResource DefaultImageButtonRectStyle}"
+                        BorderBrush="Transparent"
+                        Margin="-24 -12 -12 -12">
+                    <Image Source="Assets/Images/ic_player_ban.png"
+                           Width="60"></Image>
+                </Button>
+                <Button Style="{StaticResource DefaultImageButtonRectStyle}"
+                        BorderBrush="Transparent"
+                        Margin="-12">
+                    <Image Source="Assets/Images/play.png"
+                           Width="70"></Image>
+                </Button>
+                <Button Style="{StaticResource DefaultImageButtonRectStyle}"
+                        BorderBrush="Transparent"
+                         Margin="-12 -12 -24 -12">
+                    <Image Source="Assets/Images/ic_player_next.png"
+                           Width="60"></Image>
+                </Button>
+                <Button Style="{StaticResource DefaultImageButtonRectStyle}"
+                        BorderBrush="Transparent"
+                        Margin="-12">
+                    <Image Source="Assets/Images/ic_actionbar_share.png"
+                            Width="38"></Image>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>    
 </Page>

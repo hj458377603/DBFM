@@ -3,5 +3,30 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:DouBanFM">
+    <Application.Resources>
+        <!--SolidColorBrush-->
+        <SolidColorBrush x:Key="TitleBarSolidColorBrush" Color="#FFE8EEEA"></SolidColorBrush>
+        <SolidColorBrush x:Key="PlayerBackgroundSolidColorBrush" Color="#FF222222"></SolidColorBrush>
 
+        <!--Button-->
+        <Style x:Key="DefaultImageButtonRectStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBackground"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="{TemplateBinding Background}"
+                                Width="{TemplateBinding Width}"
+                                Padding="{TemplateBinding Padding}"
+                                Height="{TemplateBinding Height}"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center">
+                            <ContentPresenter Content="{TemplateBinding Content}"></ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
 </Application>

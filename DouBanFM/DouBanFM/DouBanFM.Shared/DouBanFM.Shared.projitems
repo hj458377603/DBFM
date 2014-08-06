@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
@@ -15,5 +15,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\abs__ic_menu_moreoverflow_normal_holo_light.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\bg_player_cover_loading.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\ic_actionbar_share.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\ic_player_ban.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\ic_player_fav.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\ic_player_next.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\play.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\pause.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\title_icon.png" />
   </ItemGroup>
 </Project>

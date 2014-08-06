@@ -27,6 +27,7 @@ namespace DouBanFM
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
+            
         }
 
         /// <summary>
