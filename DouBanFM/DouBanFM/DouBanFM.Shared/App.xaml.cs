@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.ViewManagement;
+using System.Threading.Tasks;
 
 // 有关“空白应用程序”模板的信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -31,6 +33,14 @@ namespace DouBanFM
         public App()
         {
             this.InitializeComponent();
+        }
+
+        private async void HideStatusBar()
+        {
+#if WINDOWS_PHONE_APP
+            StatusBar statusBar = StatusBar.GetForCurrentView();
+            await statusBar.HideAsync();
+#endif
         }
 
         protected override void Configure()
@@ -64,6 +74,10 @@ namespace DouBanFM
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
+#if WINDOWS_PHONE_APP
+            // Windows Phone 隐藏顶部状态栏
+            HideStatusBar();
+#endif
             DisplayRootView<MainPage>();
         }
 

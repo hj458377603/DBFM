@@ -7,9 +7,9 @@
     <Application.Resources>
         
         <!--SolidColorBrush-->
-        <SolidColorBrush x:Key="TitleBarSolidColorBrush" Color="#FFE8EEEA"></SolidColorBrush>
-        <SolidColorBrush x:Key="PlayerBackgroundSolidColorBrush" Color="#FF222222"></SolidColorBrush>
-
+        <SolidColorBrush x:Key="ThemeTitleBarSolidColorBrush" Color="#FFE8EEEA"></SolidColorBrush>
+        <SolidColorBrush x:Key="ThemePlayerBackgroundSolidColorBrush" Color="#FF333333"></SolidColorBrush>
+        <SolidColorBrush x:Key="ThemeChannelBackgroundSolidColorBrush" Color="#FF499884"></SolidColorBrush>
         <!--Button-->
         <Style x:Key="DefaultImageButtonRectStyle" TargetType="Button">
             <Setter Property="Template">

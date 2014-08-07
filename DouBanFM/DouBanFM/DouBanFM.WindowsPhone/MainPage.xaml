@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Background="White"
     FontSize="20">
 
     <Grid>
@@ -16,7 +16,7 @@
             <RowDefinition Height="120"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0"
-              Background="{StaticResource TitleBarSolidColorBrush}">
+              Background="{StaticResource ThemeTitleBarSolidColorBrush}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Assets/Images/title_icon.png"
                        Margin="6"
@@ -30,20 +30,81 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1" 
-              Background="{StaticResource PlayerBackgroundSolidColorBrush}">
-            <Pivot>
+              Background="{StaticResource ThemePlayerBackgroundSolidColorBrush}">
+            <Pivot Margin="0 -24 0 0">
                 <PivotItem Padding="0"
-                           Margin="0 -12 0 0">
-                    <Image Source="Assets/Images/bg_player_cover_loading.png"></Image>
+                           Margin="0">
+                    <Image Source="Assets/Images/bg_player_cover_loading.png"
+                           Width="300"></Image>
                 </PivotItem>
                 <PivotItem Padding="0"
-                           Margin="0 -12 0 0">
-                    <TextBlock Text="2"
-                               Margin="24"
-                               Foreground="White"></TextBlock>
+                           Margin="0">
+                    <!--<ScrollViewer>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <StackPanel Width="400"
+                                        Height="100"
+                                        Margin="0 0 0 12"
+                                        Orientation="Horizontal">
+                                <StackPanel Width="188"
+                                            Height="100"
+                                            Background="{StaticResource ThemeChannelBackgroundSolidColorBrush}"
+                                            Margin="6 0">
+                                    <TextBlock Text="流行"
+                                               Foreground="White"
+                                               Margin="0 40 0 0"
+                                               VerticalAlignment="Bottom"
+                                               HorizontalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Width="188"
+                                            Height="100"
+                                            Background="{StaticResource ThemeChannelBackgroundSolidColorBrush}"
+                                            Margin="6 0">
+                                    <TextBlock Text="流行"
+                                               Foreground="White"
+                                               Margin="0 40 0 0"
+                                               VerticalAlignment="Bottom"
+                                               HorizontalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>-->
+                    <ListView x:Name="ChannalList">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid ItemWidth="200"
+                                          Width="420"
+                                          Orientation="Horizontal" 
+                                          MaximumRowsOrColumns="3"></ItemsWrapGrid>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Width="188"
+                                            Height="100"
+                                            Background="{StaticResource ThemeChannelBackgroundSolidColorBrush}"
+                                            Margin="6 0 0 6">
+                                    <TextBlock Text="{Binding Name}"
+                                               Foreground="White"
+                                               Margin="12 40 12 0"
+                                               FontSize="18"
+                                               TextWrapping="Wrap"
+                                               VerticalAlignment="Bottom"
+                                               HorizontalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </PivotItem>
                 <PivotItem Padding="0"
-                           Margin="0 -12 0 0">
+                           Margin="0">
                     <TextBlock Text="3"
                                Margin="24"
                                Foreground="White"></TextBlock>
@@ -51,7 +112,7 @@
             </Pivot>
         </Grid>
         <Grid Grid.Row="2" 
-              Background="{StaticResource TitleBarSolidColorBrush}">
+              Background="{StaticResource ThemeTitleBarSolidColorBrush}">
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <Button Style="{StaticResource DefaultImageButtonRectStyle}"
@@ -75,7 +136,7 @@
                 </Button>
                 <Button Style="{StaticResource DefaultImageButtonRectStyle}"
                         BorderBrush="Transparent"
-                         Margin="-12 -12 -24 -12">
+                        Margin="-12 -12 -24 -12">
                     <Image Source="Assets/Images/ic_player_next.png"
                            Width="60"></Image>
                 </Button>
@@ -87,5 +148,5 @@
                 </Button>
             </StackPanel>
         </Grid>
-    </Grid>    
+    </Grid>
 </Page>

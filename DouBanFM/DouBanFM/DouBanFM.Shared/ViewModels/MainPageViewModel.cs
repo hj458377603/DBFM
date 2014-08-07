@@ -5,24 +5,21 @@ using Caliburn.Micro;
 using DouBanFM.Services;
 using System.Threading.Tasks;
 using DouBanFM.Entities;
+using System.Collections.ObjectModel;
 
 namespace DouBanFM
 {
     public class MainPageViewModel : Screen
     {
+
+        #region 字段
+
         private DouBanChannalService douBanChannalService = new DouBanChannalService();
         readonly INavigationService navigationService;
 
-        public MainPageViewModel(INavigationService navigationService)
-        {
-            this.navigationService = navigationService;
-        }
+        #endregion
 
-        protected override async void OnViewLoaded(object view)
-        {
-            base.OnViewLoaded(view);
-            await GetAllChannels();
-        }
+        #region 属性
 
         private string songName;
         public string SongName
@@ -38,11 +35,52 @@ namespace DouBanFM
             }
         }
 
+        private ObservableCollection<Channel> channalList;
+
+        public ObservableCollection<Channel> ChannalList
+        {
+            get
+            {
+                return channalList;
+            }
+            set
+            {
+                channalList = value;
+                NotifyOfPropertyChange(() => ChannalList);
+            }
+        }
+
+
+        #endregion
+
+
+        #region Command
+
         public void Paly()
         {
             SongName = "似的";
         }
 
+        #endregion
+
+        #region 构造方法
+
+        public MainPageViewModel(INavigationService navigationService)
+        {
+            this.navigationService = navigationService;
+        }
+
+        #endregion
+
+        #region 重写
+
+        protected override async void OnViewLoaded(object view)
+        {
+            base.OnViewLoaded(view);
+            await GetAllChannels();
+        }
+
+        #endregion
 
         #region 方法
 
@@ -51,7 +89,7 @@ namespace DouBanFM
             ChannelsResult result = await douBanChannalService.GetAllChannels();
             if (result != null)
             {
-
+                ChannalList = result.Channels;
             }
         }
 
