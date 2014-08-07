@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using DouBanFM.Services.Common.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -83,7 +84,12 @@ namespace DouBanFM
 
         protected override void OnUnhandledException(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e)
         {
-            base.OnUnhandledException(sender, e);
+            if (e.Exception is HttpResponseErrorException)
+            { 
+                //...
+            }
+
+            //base.OnUnhandledException(sender, e);
         }
 
     }

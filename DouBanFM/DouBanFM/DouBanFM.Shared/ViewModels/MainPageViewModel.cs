@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 using Caliburn.Micro;
+using DouBanFM.Services;
+using System.Threading.Tasks;
+using DouBanFM.Entities;
 
 namespace DouBanFM
 {
-    public class MainPageViewModel : Screen 
+    public class MainPageViewModel : Screen
     {
+        private DouBanChannalService douBanChannalService = new DouBanChannalService();
         readonly INavigationService navigationService;
 
         public MainPageViewModel(INavigationService navigationService)
@@ -14,23 +18,43 @@ namespace DouBanFM
             this.navigationService = navigationService;
         }
 
-        private string songName;
-        public string SongName 
+        protected override async void OnViewLoaded(object view)
         {
-            get 
+            base.OnViewLoaded(view);
+            await GetAllChannels();
+        }
+
+        private string songName;
+        public string SongName
+        {
+            get
             {
                 return songName;
             }
-            set 
+            set
             {
                 songName = value;
-                NotifyOfPropertyChange(() =>SongName);
+                NotifyOfPropertyChange(() => SongName);
             }
         }
 
-        public void Paly() 
+        public void Paly()
         {
             SongName = "似的";
         }
+
+
+        #region 方法
+
+        private async Task GetAllChannels()
+        {
+            ChannelsResult result = await douBanChannalService.GetAllChannels();
+            if (result != null)
+            {
+
+            }
+        }
+
+        #endregion
     }
 }

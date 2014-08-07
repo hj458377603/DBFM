@@ -126,6 +126,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DouBanFM.Entities\DouBanFM.Entities.csproj">
+      <Project>{aad8eac9-3c24-4c37-bb34-888734238b61}</Project>
+      <Name>DouBanFM.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DouBanFM.Services\DouBanFM.Services.csproj">
+      <Project>{435b1652-8a1d-4ec3-9e22-4d82643bbe8c}</Project>
+      <Name>DouBanFM.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

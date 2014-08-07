@@ -5,6 +5,7 @@
     xmlns:cal="using:Caliburn.Micro"
     xmlns:local="using:DouBanFM">
     <Application.Resources>
+        
         <!--SolidColorBrush-->
         <SolidColorBrush x:Key="TitleBarSolidColorBrush" Color="#FFE8EEEA"></SolidColorBrush>
         <SolidColorBrush x:Key="PlayerBackgroundSolidColorBrush" Color="#FF222222"></SolidColorBrush>
